@@ -3,6 +3,8 @@
 
 import openpyxl
 
+# TODO: Change these variables to command line arguments.
+
 row_location = int(input("Please enter row number: "))
 number_of_rows = int(input("Please enter number of rows to add: "))
 file_name = input("Please enter file name: ")
