@@ -12,7 +12,7 @@ def insert_rows(location, number, name):
     """Inserts blank rows into excel file and saves it as a new file."""
     wb = openpyxl.load_workbook(f"{name}.xlsx")
     sheet = wb.active
-    sheet.insert_rows(location + 1, number)
+    sheet.insert_rows(location, number)
     wb.save(f"{name}_plus_{number}_rows.xlsx")
 
 
