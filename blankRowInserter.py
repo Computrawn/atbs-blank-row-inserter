@@ -1,19 +1,19 @@
 #! python3
-# blankRowInserter.pt — An exercise in manipulating Excel files.
+# blankRowInserter.py — An exercise in manipulating Excel files.
 
 import openpyxl
 
-location = int(input("Please enter row number: "))
+row_location = int(input("Please enter row number: "))
 number_of_rows = int(input("Please enter number of rows to add: "))
-new_fname = input("Please enter the new file name: ")
+file_name = input("Please enter file name: ")
 
 
 def insert_rows(location, number, name):
     """Inserts blank rows into excel file and saves it as a new file."""
-    wb = openpyxl.load_workbook("produceSales.xlsx")
+    wb = openpyxl.load_workbook(f"{name}.xlsx")
     sheet = wb.active
     sheet.insert_rows(location + 1, number)
-    wb.save(f"{name}.xlsx")
+    wb.save(f"{name}_plus_{number}_rows.xlsx")
 
 
-insert_rows(location, number_of_rows, new_fname)
+insert_rows(row_location, number_of_rows, file_name)
