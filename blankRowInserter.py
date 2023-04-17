@@ -1,13 +1,12 @@
 #! python3
 # blankRowInserter.py — An exercise in manipulating Excel files.
 
+import sys
 import openpyxl
 
-# TODO: Change these variables to command line arguments.
-
-row_location = int(input("Please enter row number: "))
-number_of_rows = int(input("Please enter number of rows to add: "))
-file_name = input("Please enter file name: ")
+row_location = int(sys.argv[1])
+number_of_rows = int(sys.argv[2])
+file_name = sys.argv[3]
 
 
 def insert_rows(location, number, name):
