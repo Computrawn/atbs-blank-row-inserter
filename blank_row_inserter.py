@@ -13,9 +13,18 @@ logging.basicConfig(
 )
 logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
-row_location = int(sys.argv[1])
-number_of_rows = int(sys.argv[2])
-file_name = sys.argv[3]
+
+def main():
+    """Call insert_rows function on command line arguments."""
+    try:
+        insert_rows(int(sys.argv[1]), int(sys.argv[2]), sys.argv[3])
+    except IndexError:
+        print(
+            """Please run script from the command line with the following arguments:
+* row location
+* number of rows
+* file name"""
+        )
 
 
 def insert_rows(location, number, name):
@@ -26,4 +35,5 @@ def insert_rows(location, number, name):
     wb.save(f"{name}_plus_{number}_rows.xlsx")
 
 
-insert_rows(row_location, number_of_rows, file_name)
+if __name__ == "__main__":
+    main()
